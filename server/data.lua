@@ -8,103 +8,120 @@
 
 ]]
 
-CASES = {
-    ['gun_case'] = { -- this index should be the name of the item used if you are triggering this through using an item
+local lootboxData = {
+    -- ガチャを実行するトリガーのアイテムを設定
+    ['027_gacha'] = { -- this index should be the name of the item used if you are triggering this through using an item
+        --標準ガチャの収録リスト
         common = {
             {
-                name = 'WEAPON_PISTOL',
+                name = '027_sakura_common',
                 amount = 1,
+                imageUrl = '',
                 additionalItems = {
-                    { name = 'ammo-9', amount = 3 }
+                    { name = '027_gacha', amount = 1 },
                 }
             },
-            {
-                name = 'WEAPON_SNSPISTOL',
-                amount = 1,
-            },
-            {
-                name = 'WEAPON_VINTAGEPISTOL',
-                amount = 1,
-            },
-            {
-                name = 'WEAPON_COMBATPISTOL',
-                amount = 1,
-            }
         },
         uncommon = {
             {
-                name = 'WEAPON_HEAVYPISTOL',
+                name = '027_sakura_uncommon',
                 amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha', amount = 1 },
+                }
             },
-            {
-                name = 'WEAPON_PISTOLXM3',
-                amount = 1,
-            },
-            {
-                name = 'WEAPON_DOUBLEACTION',
-                amount = 1,
-            }
         },
         rare = {
             {
-                name = 'WEAPON_APPISTOL',
+                name = '027_sakura_rare',
                 amount = 1,
-            },
-            {
-                name = 'WEAPON_MACHINEPISTOL',
-                amount = 1,
-            },
-            {
-                name = 'WEAPON_SAWNOFFSHOTGUN',
-                amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha', amount = 1 },
+                }
             },
         },
         epic = {
             {
-                name = 'WEAPON_COMBATPDW',
+                name = '027_sakura_epic',
                 amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha', amount = 1 },
+                }
             },
-            {
-                name = 'WEAPON_COMPACTRIFLE',
-                amount = 1,
-            },
-            {
-                name = 'WEAPON_CARBINERIFLE',
-                amount = 1,
-            },
-
         },
         legendary = {
             {
-                name = 'WEAPON_RPG',
+                name = '027_sakura_legendary',
                 amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha', amount = 1 },
+                }
             },
-            {
-                name = 'WEAPON_DAGGER',
-                amount = 1,
-            },
-            {
-                name = 'WEAPON_RAYPISTOL',
-                amount = 1,
-            },
-
         },
-    }
+    },
+
+    --限定ガチャの収録リスト
+    ['027_gacha_limited'] = {
+        common = {
+            {
+                name = '027_sakura_common',
+                amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha_limited', amount = 1 },
+                }
+            },
+        },
+        uncommon = {
+            {
+                name = '027_sakura_uncommon',
+                amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha_limited', amount = 1 },
+                }
+            },
+        },
+        rare = {
+            {
+                name = '027_sakura_rare',
+                amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha_limited', amount = 1 },
+                }
+            },
+        },
+        epic = {
+            {
+                name = '027_sakura_epic',
+                amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha_limited', amount = 1 },
+                }
+            },
+        },
+        legendary = {
+            {
+                name = '027_sakura_legendary',
+                amount = 1,
+                imageUrl = '',
+                additionalItems = {
+                    { name = '027_gacha_limited', amount = 1 },
+                }
+            },
+        },
+    },
 }
 
+--ガチャの種類ごとに個別のexportsを作成してください
+exports["demi_lootbox"]:addNewLootBox("027_gacha", lootboxData)
+exports["demi_lootbox"]:addNewLootBox("027_gacha_limited", lootboxData)
 
-for case, data in pairs(CASES) do
-    Bridge.RegisterUsableItem(case, function(src) --register case as a usable item
-        if Bridge.removeItem(src, case, 1) then
-            local lootPool, winner = GetCaseData(src, case)
-            TriggerClientEvent('demi_lootbox:RollCase', src, lootPool, winner)
-        end
-    end)
-
-    for rarity, items in pairs(data) do --because im lazy and didnt want to add a label to every item
-        for i = 1, #items do
-            local item = CASES[case][rarity][i]
-            CASES[case][rarity][i].label = Bridge.getitemLabel(item.name)
-        end
-    end
-end
+--別のガチャを作れば以下のように追加
+--exports["demi_lootbox"]:addNewLootBox("027_gacha_new", lootboxData)

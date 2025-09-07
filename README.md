@@ -11,7 +11,8 @@
 5. ガチャの種類ごとに確率を変更するサンプルを `data.lua` に追記しました。  
 6. 「標準ガチャ」アイテムが 1% の確率で「限定ガチャ」に変化する処理を追加しました。
 
-これらの改造を加えた本リポジトリは、元の `demi_lootbox` と同じライセンスで提供されます。
+このスクリプトは開発元の `demi_lootbox` と同様にGPLv3ライセンスのもとで提供されています。 
+使用に伴ういかなる損害についても、作者は責任を負いません。 自己責任でご利用ください。
 
 ### ox_inventory の items.lua に必要な追記
 
@@ -100,7 +101,9 @@ This repository is a modified version of the original `demi_lootbox` script, ada
 5. Included sample logic to vary probabilities based on gacha type.  
 6. Added a mechanic where the "standard gacha" item has a 1% chance to transform into a "limited gacha".
 
-This modified repository is distributed under the same license as the original `demi_lootbox`.
+This script is provided under the same GPLv3 license as the original `demi_lootbox`.  
+The author assumes no responsibility for any damages resulting from its use.  
+Please use it at your own risk.
 
 ### Required additions to ox_inventory's items.lua
 

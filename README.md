@@ -13,6 +13,82 @@
 
 これらの改造を加えた本リポジトリは、元の `demi_lootbox` と同じライセンスで提供されます。
 
+### ox_inventory の items.lua に必要な追記
+
+このスクリプトを正常に動作させるためには、`ox_inventory/data/items.lua` に以下のアイテム定義を追加する必要があります。  
+これにより、ガチャアイテムの表示・使用イベントが正しく連携されます。
+使用する画像は使用者自身で`ox_inventory/web/images`への追加をお願い致します。
+
+`items.lua`への追記内容:
+-- demi_lootbox 用アイテム定義
+['027_gacha'] = {
+    label = 'ガチャ',
+    weight = 0,
+    description = '何が出るかな？',
+    client = {
+        image = "027_gacha.png",
+        event = 'demi_lootbox:useGacha',
+    },
+},
+['027_gacha_limited'] = {
+    label = '限定ガチャ',
+    weight = 0,
+    description = '良いものが出そうな予感？',
+    client = {
+        image = "027_gacha_limited.png",
+        event = 'demi_lootbox:useGacha',
+    }
+},
+-- サクラ系アイテム（演出用）
+['027_sakura'] = {
+    label = 'サクラ',
+    weight = 0,
+    description = '綺麗なサクラ',
+    client = {
+        image = "027_sakura.png",
+    }
+},
+['027_sakura_common'] = {
+    label = 'サクラ（コモン）',
+    weight = 0,
+    description = '綺麗なサクラ',
+    client = {
+        image = "027_sakura_common.png",
+    }
+},
+['027_sakura_uncommon'] = {
+    label = 'サクラ（アンコモン）',
+    weight = 0,
+    description = '綺麗なサクラ',
+    client = {
+        image = "027_sakura_uncommon.png",
+    }
+},
+['027_sakura_rare'] = {
+    label = 'サクラ（レア）',
+    weight = 0,
+    description = '綺麗なサクラ',
+    client = {
+        image = "027_sakura_rare.png",
+    }
+},
+['027_sakura_epic'] = {
+    label = 'サクラ（エピック）',
+    weight = 0,
+    description = '綺麗なサクラ',
+    client = {
+        image = "027_sakura_epic.png",
+    }
+},
+['027_sakura_legendary'] = {
+    label = 'サクラ（レジェンダリー）',
+    weight = 0,
+    description = '綺麗なサクラ',
+    client = {
+        image = "027_sakura_legendary.png",
+    }
+},
+
 ## Modifications (by Rezuna)
 
 This repository is a modified version of the original `demi_lootbox` script, adapted for use in Qbox environments. The following changes have been made:
@@ -25,6 +101,84 @@ This repository is a modified version of the original `demi_lootbox` script, ada
 6. Added a mechanic where the "standard gacha" item has a 1% chance to transform into a "limited gacha".
 
 This modified repository is distributed under the same license as the original `demi_lootbox`.
+
+### Required additions to ox_inventory's items.lua
+
+To ensure proper functionality of this script, the following item definitions must be added to `ox_inventory/data/items.lua`.  
+These entries enable correct display and usage events for the gacha items.
+
+Please note: You are responsible for adding the corresponding image files (e.g. `027_gacha.png`) to `ox_inventory/web/images`.
+
+Items to be added to `items.lua`:
+-- Item definitions for demi_lootbox
+['027_gacha'] = {
+    label = 'Gacha',
+    weight = 0,
+    description = 'What might come out?',
+    client = {
+        image = "027_gacha.png",
+        event = 'demi_lootbox:useGacha',
+    },
+},
+['027_gacha_limited'] = {
+    label = 'Limited Gacha',
+    weight = 0,
+    description = 'Feels like something rare might appear?',
+    client = {
+        image = "027_gacha_limited.png",
+        event = 'demi_lootbox:useGacha',
+    }
+},
+
+-- Sakura-themed items (for visual effects)
+['027_sakura'] = {
+    label = 'Sakura',
+    weight = 0,
+    description = 'Beautiful cherry blossom',
+    client = {
+        image = "027_sakura.png",
+    }
+},
+['027_sakura_common'] = {
+    label = 'Sakura (Common)',
+    weight = 0,
+    description = 'Beautiful cherry blossom',
+    client = {
+        image = "027_sakura_common.png",
+    }
+},
+['027_sakura_uncommon'] = {
+    label = 'Sakura (Uncommon)',
+    weight = 0,
+    description = 'Beautiful cherry blossom',
+    client = {
+        image = "027_sakura_uncommon.png",
+    }
+},
+['027_sakura_rare'] = {
+    label = 'Sakura (Rare)',
+    weight = 0,
+    description = 'Beautiful cherry blossom',
+    client = {
+        image = "027_sakura_rare.png",
+    }
+},
+['027_sakura_epic'] = {
+    label = 'Sakura (Epic)',
+    weight = 0,
+    description = 'Beautiful cherry blossom',
+    client = {
+        image = "027_sakura_epic.png",
+    }
+},
+['027_sakura_legendary'] = {
+    label = 'Sakura (Legendary)',
+    weight = 0,
+    description = 'Beautiful cherry blossom',
+    client = {
+        image = "027_sakura_legendary.png",
+    }
+},
 
 ## Overview
 

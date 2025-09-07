@@ -19,7 +19,7 @@
 これにより、ガチャアイテムの表示・使用イベントが正しく連携されます。
 使用する画像は使用者自身で`ox_inventory/web/images`への追加をお願い致します。
 
-`items.lua`への追記内容:
+```items.lua
 -- demi_lootbox 用アイテム定義
 ['027_gacha'] = {
     label = 'ガチャ',
@@ -88,7 +88,7 @@
         image = "027_sakura_legendary.png",
     }
 },
-
+```
 ## Modifications (by Rezuna)
 
 This repository is a modified version of the original `demi_lootbox` script, adapted for use in Qbox environments. The following changes have been made:
@@ -109,7 +109,7 @@ These entries enable correct display and usage events for the gacha items.
 
 Please note: You are responsible for adding the corresponding image files (e.g. `027_gacha.png`) to `ox_inventory/web/images`.
 
-Items to be added to `items.lua`:
+```items.lua
 -- Item definitions for demi_lootbox
 ['027_gacha'] = {
     label = 'Gacha',
@@ -179,7 +179,7 @@ Items to be added to `items.lua`:
         image = "027_sakura_legendary.png",
     }
 },
-
+```
 ## Overview
 
 `demi_lootbox` is a FiveM script that brings a CSGO-style case opening user interface into your server. With a visual representation and configurable case contents, this script enhances the in-game economy with randomized loot mechanics.

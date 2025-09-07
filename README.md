@@ -1,5 +1,31 @@
 # demi_lootbox - README.md
 
+## 改造内容（by レズナ）
+
+このリポジトリは、元の `demi_lootbox` スクリプトをベースに、Qbox環境での使用を想定して以下の改造を加えたものです：
+
+1. Qboxでの使用を想定して `client.lua`、`data.lua`、`server.lua` を編集しました。  
+2. `bridge.lua` は使用しないため削除しました。  
+3. 使用中に再使用不可の状態とし、再使用によるアイテムロストを防止しました。  
+4. ガチャアイテムを複数所有している場合、自動的に連続で引く処理を追加しました。  
+5. ガチャの種類ごとに確率を変更するサンプルを `data.lua` に追記しました。  
+6. 「標準ガチャ」アイテムが 1% の確率で「限定ガチャ」に変化する処理を追加しました。
+
+これらの改造を加えた本リポジトリは、元の `demi_lootbox` と同じライセンスで提供されます。
+
+## Modifications (by Rezuna)
+
+This repository is a modified version of the original `demi_lootbox` script, adapted for use in Qbox environments. The following changes have been made:
+
+1. Edited `client.lua`, `data.lua`, and `server.lua` to support Qbox integration.  
+2. Removed `bridge.lua` as it is not used in this setup.  
+3. Prevented re-use during active operation to avoid item loss.  
+4. Added automatic multi-roll functionality when the player owns multiple gacha items.  
+5. Included sample logic to vary probabilities based on gacha type.  
+6. Added a mechanic where the "standard gacha" item has a 1% chance to transform into a "limited gacha".
+
+This modified repository is distributed under the same license as the original `demi_lootbox`.
+
 ## Overview
 
 `demi_lootbox` is a FiveM script that brings a CSGO-style case opening user interface into your server. With a visual representation and configurable case contents, this script enhances the in-game economy with randomized loot mechanics.
